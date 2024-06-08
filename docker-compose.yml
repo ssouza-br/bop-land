@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "${FRONT_PORT}:8000"
+    environment:
+      - FRONT_PORT=${FRONT_PORT}
+
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - "${BACK_PORT}:5000"
+    environment:
+      - BACK_PORT=${BACK_PORT}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
