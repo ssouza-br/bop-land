@@ -33,6 +33,10 @@ BACK_PORT=5666
 E rodar o seguinte comando
 
 ```
+docker compose build
+```
+
+```
 docker compose up -d
 ```
 
